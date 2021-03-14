@@ -1,0 +1,20 @@
+{
+  "name": "socket-example",
+  "version": "1.0.0",
+  "description": "Demo",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Ra0ul",
+  "license": "ISC",
+  "dependencies": {
+    "-": "0.0.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "serialport": "^9.0.7",
+    "socket.io": "^3.1.2"
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>communicate between web and arduino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <h4>OLLA</h4>
+    <div>
+        <button class='redButton' onclick="RedButtonClicked()" id="R">RED</button>
+        <button class='greenButton' onclick="GreenButtonClicked()" id="G">GREEN</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        const socket = io.connect();
+        function RedButtonClicked() {
+            socket.emit('RedClicked');
+            console.log("red");
+        }
+        function GreenButtonClicked() {
+            socket.emit('GreenClicked');
+        }
+
+        socket.on("back", function (data) {
+            document.body.style.backgroundColor = data;
+        });
+
+
+        socket.on("RedUpdate", function (data) {
+            if (data == 1) {
+                // document.getElementById("R").style.backgroundColor = 'red';
+                document.body.style.backgroundColor = 'red';
+            } else {
+                //document.getElementById("R").style.backgroundColor = 'black';
+                document.body.style.backgroundColor = 'white';
+            }
+        });
+
+        socket.on("GreenUpdate", function (data) {
+            if (data == 1) {
+                //document.getElementById("G").style.backgroundColor = 'green';
+                document.body.style.backgroundColor = 'green';
+            } else {
+                //document.getElementById("G").style.backgroundColor = 'black';
+                document.body.style.backgroundColor = 'white';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+h4 {
+    color: rgb(162, 28, 224);
+  }
+  
+  .redButton {
+    border: 0;
+    line-height: 2;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+    color: cornsilk;
+    background-color: rgb(179, 27, 27);
+  }
+  
+  .greenButton {
+    border: 0;
+    line-height: 2;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+    color: cornsilk;
+    background-color: rgb(27, 179, 85);
+  }
